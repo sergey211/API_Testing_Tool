@@ -1,9 +1,9 @@
 import requests
+from endpoints.endpoint_handler import Endpoint
 
 
-class AuthorizeEndpoint:
+class AuthorizeEndpoint(Endpoint):
     token = None
-    status = None
     user = None
     long_url = None
 
@@ -13,7 +13,6 @@ class AuthorizeEndpoint:
         self.long_url = long_url
 
     def get_token(self):
-
         header = {
             'Content-Type': 'application/json',
         }
@@ -36,11 +35,8 @@ class AuthorizeEndpoint:
         self.user = response.json()['user']
         return self.token
 
-
-
-
-    def status_code_is_200(self):
-        return self.status == 200
+    # def status_code_is_200(self):
+    #     return self.status == 200
 
     def name_of_user_the_same_as_sent(self):
         return self.name == self.user

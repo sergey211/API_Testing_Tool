@@ -1,5 +1,6 @@
 import requests
 
+
 def test_create_mem():
     header = {'Content-Type': 'application/json'}
     data = {
