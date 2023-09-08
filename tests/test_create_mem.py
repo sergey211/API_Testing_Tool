@@ -5,4 +5,4 @@ def test_create_mem():
     data = {
         'input': 'http://okulik.site:52355/'
     }
-    responce = requests.post()
+    response = requests.post()
