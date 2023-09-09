@@ -3,14 +3,11 @@ from endpoints.endpoint_handler import Endpoint
 
 
 class AuthorizeEndpoint(Endpoint):
-    token = None
-    user = None
-    long_url = None
 
-    def __init__(self, long_url, name):
+    def __init__(self):
+        self.long_url = "http://okulik.site:52355/authorize"
+        self.name = "Sergey"
         # base_url = self.long_url - WRONG!
-        self.name = name
-        self.long_url = long_url
 
     def get_token(self):
         header = {
