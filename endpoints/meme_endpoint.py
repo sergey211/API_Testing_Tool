@@ -7,11 +7,12 @@ class MemeEndpoint(Endpoint):
     user = None
     long_url = None
     max_id = None
+    resp_text = None
 
-    def __init__(self, url, token):
+    def __init__(self, token):
         # base_url = self.long_url - WRONG!
         self.token = token
-        self.url = url
+        self.url = 'http://okulik.site:52355/meme'
 
     def get_meme_max(self):
         header = {
@@ -49,16 +50,20 @@ class MemeEndpoint(Endpoint):
             headers=header
         )
         self.status = response.status_code
+        return response.text
 
-    def get_mem_by_id(self):
+    def get_mem_by_id(self, id):
         header = {
             'Content-Type': 'application/json',
             'Authorization': self.token
         }
 
         response = requests.get(
-            self.url,
+            self.url+'/'+str(id),
             headers=header
         )
+        # resp_text = response.text
+        # print(resp_text)
         self.status = response.status_code
         print(self.status)
+        return response.text
