@@ -1,4 +1,4 @@
-from endpoints.meme_endpoint import MemeEndpoint
+from endpoints.get_meme_endpoint import MemeEndpoint
 
 
 def test_get_max_mem_id(token):
