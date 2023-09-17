@@ -11,14 +11,14 @@ def token():
 
 
 @pytest.fixture(scope="session")
-def meme_id(token):
+def endpoint(token):
     endpoint = PostMemeEndpoint(token)
     endpoint.post_meme()
-    return endpoint.meme_id
+    return endpoint
 
 
-@pytest.fixture(scope="session")
-def data(token):
-    endpoint = PostMemeEndpoint(token)
-    endpoint.post_meme()
-    return endpoint.data
+# @pytest.fixture(scope="session")
+# def data(token):
+#     endpoint = PostMemeEndpoint(token)
+#     endpoint.post_meme()
+#     return endpoint.data
