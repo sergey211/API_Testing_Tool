@@ -1,4 +1,5 @@
 import pytest
+# import config
 from endpoints.authorize_endpoint import AuthorizeEndpoint
 from endpoints.post_meme_endpoint import PostMemeEndpoint
 
@@ -16,9 +17,3 @@ def endpoint(token):
     endpoint.post_meme()
     return endpoint
 
-
-# @pytest.fixture(scope="session")
-# def data(token):
-#     endpoint = PostMemeEndpoint(token)
-#     endpoint.post_meme()
-#     return endpoint.data
