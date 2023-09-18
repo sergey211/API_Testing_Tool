@@ -7,14 +7,20 @@ class Endpoint:
     def status_code_is_200(self):
         return self.status == 200
 
+    def status_code_is_400(self):
+        return self.status == 400
+
     def status_code_is_401(self):
         return self.status == 401
 
     def status_code_is_404(self):
         return self.status == 404
 
+    def status_code_is_500(self):
+        return self.status == 500
+
     def code_is_the_same_as_custom(self):
-        dict1 = self.response
+        dict1 = self.response.json()
         dict2 = self.data
         the_same_items = {k: dict2[k] for k in dict2 if k in dict1 and dict2[k] == dict1[k]}
         return len(the_same_items) == len(self.data)

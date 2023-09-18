@@ -26,8 +26,8 @@ class MemeEndpoint(Endpoint):
         )
         self.status = response.status_code
         print(self.status)
-        print(response.json())
-        print(response.json()['data'][-1]['id'])
+        # print(response.json())
+    #    print(response.json()['data'][-1]['id'])
         listMems = response.json()['data']
         listId = []
         for x in listMems:

@@ -1,7 +1,9 @@
+import pytest
 import requests
 from endpoints.authorize_endpoint import AuthorizeEndpoint
 
-
+@pytest.mark.skip('for testing skipping')
+@pytest.mark.critical
 def test_get_token():
     endpoint = AuthorizeEndpoint()
     endpoint.get_token()

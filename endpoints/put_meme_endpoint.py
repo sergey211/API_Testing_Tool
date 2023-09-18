@@ -38,7 +38,7 @@ class PutMemeEndpoint(Endpoint):
         print('code = ', response.status_code)
         print('resp = ', response)
         print('resp.text = ', response.text)
-      #  print('resp.json = ', response.json())
+        #  print('resp.json = ', response.json())
         self.status = response.status_code
         self.response = response.json()
 

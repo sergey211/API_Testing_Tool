@@ -1,3 +1,4 @@
+import pytest
 from endpoints.get_meme_endpoint import MemeEndpoint
 
 
@@ -14,7 +15,7 @@ def test_not_authorized():
     assert "Unauthorized" in resp_text
     assert endpoint_meme.status_code_is_401()
 
-
+@pytest.mark.medium
 def test_open_mem_by_id(token):
     endpoint_meme = MemeEndpoint(token)
     max_id = endpoint_meme.get_meme_max()
@@ -23,6 +24,7 @@ def test_open_mem_by_id(token):
     assert endpoint_meme.status_code_is_200()
 
 
+@pytest.mark.medium
 def test_open_absent_mem(token):
     endpoint_meme = MemeEndpoint(token)
     absent_id = endpoint_meme.get_meme_max() + 1
