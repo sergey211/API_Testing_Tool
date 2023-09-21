@@ -25,6 +25,8 @@ def test_open_mem_by_id(token):
 
 
 @pytest.mark.medium
+@pytest.mark.blocker
+@pytest.mark.breakes
 def test_open_absent_mem(token):
     endpoint_meme = MemeEndpoint(token)
     absent_id = endpoint_meme.get_meme_max() + 1
